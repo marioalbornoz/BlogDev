@@ -1,0 +1,6 @@
+certifi==2020.4.5.1
+Django==2.2.12
+django-cors-headers==3.3.0
+djangorestframework==3.11.0
+pytz==2020.1
+sqlparse==0.3.1
