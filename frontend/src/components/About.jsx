@@ -1,0 +1,12 @@
+import React from 'react';
+const About = () => {
+    return (
+        <>
+        <h1>Hello wordl</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos aperiam obcaecati omnis, et molestiae totam, eveniet voluptates exercitationem placeat nisi, assumenda amet distinctio enim alias? Voluptatem laboriosam hic eligendi. Incidunt obcaecati asperiores ullam temporibus nihil saepe dolore laboriosam porro placeat eveniet, nam officiis nesciunt tempore sint sit praesentium numquam fuga quia hic officia, magni, laborum vel odit. Recusandae magni reprehenderit atque adipisci eius, laboriosam cupiditate neque itaque nihil accusamus dicta voluptatem qui. Inventore incidunt, debitis dignissimos molestiae id iste provident quae excepturi temporibus. Totam impedit dolorum amet, suscipit a explicabo nihil dolorem veniam dolore. Perferendis tempora laborum aliquam natus atque est sapiente molestias voluptas, eius impedit molestiae accusantium harum nostrum dicta numquam nulla vel facilis optio voluptate, et adipisci cumque sit? Maxime aperiam tempore repellat iusto ducimus. Placeat voluptatum adipisci officia dolore repudiandae excepturi, voluptatibus similique sequi temporibus maiores, at asperiores cupiditate aperiam praesentium totam neque. Asperiores explicabo consequatur ducimus fugiat sapiente aut velit ratione voluptatum, nam totam quam voluptates minima aliquid eveniet labore saepe facilis enim et, tempora in. Tempora, aspernatur sit facilis sequi ipsum obcaecati consequuntur, recusandae commodi harum officiis sapiente odit eos, vel debitis numquam consectetur iusto repudiandae accusantium adipisci ad? Nam quidem facere laudantium quam excepturi, et dicta provident aliquam possimus ab pariatur animi. Enim illum similique nihil pariatur. Saepe dolore assumenda nobis, at ut itaque, culpa minima inventore obcaecati animi veritatis eius accusamus blanditiis hic atque, laudantium repellendus voluptatibus. Laboriosam nemo iure earum quisquam assumenda neque sit quae ad, debitis ullam voluptatibus vitae, esse voluptates at ut tempora ab ex reprehenderit asperiores. Maiores illum totam dolorem, reprehenderit incidunt eaque laborum cumque. Eveniet neque totam officia iusto possimus alias, quas deserunt quisquam expedita dolorem explicabo tenetur velit unde cupiditate impedit eligendi sint labore quam aspernatur quidem similique dolorum. Quis molestias sunt necessitatibus. Odio praesentium sunt quam!</p> 
+        </>
+    );
+    
+}
+ 
+export default About;
