@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
+const API = process.env.REACT_APP_API;
 
 
-
-const Formulario = () => {
+const Formulario = ({guardarPosts}) => {
   const [titulo, guardarTitulo] = useState("");
   const [texto, guardarTexto] = useState("");
 
@@ -13,9 +13,32 @@ const Formulario = () => {
   const inputTexto = (e) => {
     guardarTexto(e.target.value);
   };
-  const handleSubmit = (e) => {
+  const getPost = async () => {
+    const res = await fetch(`http://127.0.0.1:8000/api/`);
+    const response = await res.json();
+    console.log(response);
+    guardarPosts(response);
+  };
+
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log("enviando");
+    const res = await fetch(`${API}`, {
+      method: "POST",
+      headers:{
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        title:titulo,
+        content: texto,
+      }),
+    });
+    const data = await res.json();
+    console.log('====================================');
+    console.log(data);
+    console.log('====================================');
+    getPost();
+    guardarTitulo("");
+    guardarTexto("");
   }
 
  

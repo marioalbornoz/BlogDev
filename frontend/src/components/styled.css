@@ -1,4 +1,12 @@
-.posts {
-    
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
 
+.posteos {
+    display: flex;
+    flex-wrap: wrap;
 }

@@ -1,33 +1,49 @@
-import React, { useEffect, useState, Fragment } from 'react'
+import React, {useState, Fragment, useEffect } from 'react'
 // import { getPost } from '../helpers/getPost';
 import Formulario from './Formulario';
 import './styled.css';
+// import { getPost } from "../helpers/getPost";
+
+const API = process.env.REACT_APP_API;
 
 export const Post = () => {
 
     const [posts, guardarPosts] = useState([]);
 
-    const getPost = async() => {
-        const res = await fetch(`http://127.0.0.1:8000/api/`);
-        const response = await res.json();
-        console.log(response);
-        guardarPosts(response);
-    }
+    useEffect(() => {
+      getPost();
+    }, []);
 
-    useEffect(()=>{
-        getPost();
-    },[])
+    const getPost = async() => {
+      const res = await fetch(`${API}`);
+      const response = await res.json();
+      console.log(response);
+      guardarPosts(response);
+  }
+
+    const handleDelete = async(id) => {
+      await fetch(`${API}${id}`, { method: "DELETE" })
+      await getPost();
+    }
+    
     return (
       <Fragment>
         <div className="row">
-          <div className="col col-5">
-            <Formulario />
+          <div className="col col-4">
+            <Formulario guardarPosts = {guardarPosts}/>
           </div>
-          <div className="col col-7">
+          <div className="col col-8 posteos">
             {posts.map((post) => (
-              <div className="post" key={post.id}>
-                <h5>{post.title}</h5>
+              <div className="card w-50 my-1" key={post.id}>
+                <div className="card-header">
+                  <h5>{post.title}</h5>{" "}
+                  <button type="submit" onClick={()=>handleDelete(post.id)} className="btn btn-ligth">
+                    x
+                  </button>
+                </div>
+                <div className="card-body">
                 <p>{post.content}</p>
+                </div>
               </div>
             ))}
           </div>
