@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react';
 
-const Users = () => {
+
+
+
+const Formulario = () => {
   const [titulo, guardarTitulo] = useState("");
   const [texto, guardarTexto] = useState("");
 
@@ -16,18 +18,9 @@ const Users = () => {
     console.log("enviando");
   }
 
-  const getUsers = async() => {
-        const res = await fetch('https://sinca.mma.gob.cl/index.php/json/listadomapa2k19/');
-        const response = await res.json();
-        console.log(response);
-  }
-
-  useEffect(()=>{
-      getUsers();
-  },[])
+ 
   return (
-    <div className="row">
-      <div className="col-md-4">
+
         <form onSubmit={handleSubmit} className="card card-body">
           <input
             type="text"
@@ -50,10 +43,7 @@ const Users = () => {
             </textarea>
             <button className="btn btn-primary btn-block">Guardar</button>
         </form>
-      </div>
-      <div className="col md-8"></div>
-    </div>
   );
 };
  
-export default Users;
+export default Formulario;
