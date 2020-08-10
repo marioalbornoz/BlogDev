@@ -34,7 +34,7 @@ export const Post = () => {
           </div>
           <div className="col col-8 posteos">
             {posts.map((post) => (
-              <div className="card w-50 my-1" key={post.id}>
+              <div className="card w-45 m-2" key={post.id}>
                 <div className="card-header">
                   <h5>{post.title}</h5>{" "}
                   <button type="submit" onClick={()=>handleDelete(post.id)} className="btn btn-ligth">
