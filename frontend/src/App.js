@@ -12,7 +12,7 @@ function App() {
       <Navbar />
       <div className="container p-4">
         <Switch>
-          <Route path="/about" component={About}/>\
+          <Route path="/about" component={About}/>
           <Route path="/" component={Post}/>
         </Switch>
       </div>
