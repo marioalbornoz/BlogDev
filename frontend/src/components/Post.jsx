@@ -71,7 +71,7 @@ export const Post = () => {
         </div>
         <div className="col col-lg-8 col-md-7 col-xs-12 posteos">
           {posts.map((post) => (
-            <div className="card w-45 m-2" key={post.id}>
+            <div className="card w-45 m-2 animate__animated animate__bounceInRight" key={post.id}>
               <div className="card-header">
                 <p className="h5">{post.title} </p>
                 <button
