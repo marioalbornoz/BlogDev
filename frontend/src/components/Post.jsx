@@ -2,6 +2,7 @@ import React, { useState, Fragment, useEffect } from "react";
 // import { getPost } from '../helpers/getPost';
 import Formulario from "./Formulario";
 import "./styled.css";
+import Alert from "./Alert";
 // import { getPost } from "../helpers/getPost";
 
 const API = process.env.REACT_APP_API;
@@ -65,9 +66,7 @@ export const Post = () => {
             idpost={idpost}
           />
           {alertedit ? (
-            <div className="alert alert-info">
-              <p>Presiona dos veces la tarjeta para editar</p>
-            </div>
+            <Alert message="Presiona dos veces la tarjeta para editar"/>
           ) : null}
         </div>
         <div className="col col-lg-8 col-md-7 col-xs-12 posteos">
