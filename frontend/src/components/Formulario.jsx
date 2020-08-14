@@ -82,7 +82,7 @@ const Formulario = ({
         onChange={inputTexto}
         value={texto}
         placeholder="ingrese texto aqui.."
-        className="form-control"
+        className="form-control mb-3"
       ></textarea>
       {
         editando? <button className="btn btn-danger btn-block">Editar/Listo</button>

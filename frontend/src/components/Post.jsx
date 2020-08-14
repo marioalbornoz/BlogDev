@@ -47,7 +47,7 @@ export const Post = () => {
     return (
       <Fragment>
         <div className="row">
-          <div className="col col-4">
+          <div className="col col-lg-4 col-md-5 justify-content-md-center col-xs-12">
             <Formulario
               titulo={titulo}
               guardarTitulo={guardarTitulo}
@@ -59,7 +59,7 @@ export const Post = () => {
               idpost = {idpost}
             />
           </div>
-          <div className="col col-8 posteos">
+          <div className="col col-lg-8 col-md-7 col-xs-12 posteos">
             {posts.map((post) => (
               <div className="card w-45 m-2" key={post.id}>
                 <div className="card-header">
