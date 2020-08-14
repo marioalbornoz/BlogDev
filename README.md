@@ -2,8 +2,8 @@
 Desarrollado usando django para el backend y React(hooks) para el frontend
 
 ## Backend
-pip install -r requirements.txt
-./manage.py runserver
+- pip install -r requirements.txt
+- ./manage.py runserver
 
 ## Frontend
 - npm i
