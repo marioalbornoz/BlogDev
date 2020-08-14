@@ -41,7 +41,7 @@ export const Post = () => {
       
       // Se llena el formulario con los datos tomados
       guardarTitulo(data.title);
-      guardarTexto(data.content)
+      guardarTexto(data.content);
     }
     
     return (
@@ -55,6 +55,7 @@ export const Post = () => {
               guardarTexto = {guardarTexto}
               guardarPosts={guardarPosts}
               editando = {editando}
+              setEditando={setEditando}
               idpost = {idpost}
             />
           </div>
@@ -62,11 +63,11 @@ export const Post = () => {
             {posts.map((post) => (
               <div className="card w-45 m-2" key={post.id}>
                 <div className="card-header">
-                  <h5>{post.title}</h5>{" "}
+                  <p className="h5">{post.title}{" "}</p>
                   <button
                     type="submit"
                     onClick={() => handleDelete(post.id)}
-                    className="btn btn-ligth"
+                    className="btn radio"
                   >
                     x
                   </button>

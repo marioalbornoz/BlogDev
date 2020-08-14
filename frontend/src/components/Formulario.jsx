@@ -10,6 +10,7 @@ const Formulario = ({
   guardarTitulo,
   guardarTexto,
   editando,
+  setEditando,
   idpost,
 }) => {
   const inputTitulo = (e) => {
@@ -27,7 +28,7 @@ const Formulario = ({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(editando === false){
+    if(!editando){
       const res = await fetch(`${API}`, {
         method: "POST",
         headers: {
@@ -55,6 +56,7 @@ const Formulario = ({
       });
       const data = await res.json();
       console.log(data);
+      setEditando(false);
     }
     
     getPost();
@@ -83,7 +85,7 @@ const Formulario = ({
         className="form-control"
       ></textarea>
       {
-        editando? <button className="btn btn-danger btn-block">Editar</button>
+        editando? <button className="btn btn-danger btn-block">Editar/Listo</button>
         : <button className="btn btn-primary btn-block">Guardar</button>
       }
       
