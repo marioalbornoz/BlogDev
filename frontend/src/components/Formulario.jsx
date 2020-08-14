@@ -74,6 +74,7 @@ const Formulario = ({
         placeholder="ingrese titulo aqui.."
         className="form-control"
         autoFocus
+        required
       />
       <hr />
       <textarea
