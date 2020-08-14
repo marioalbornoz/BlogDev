@@ -27,6 +27,7 @@ export const Post = () => {
 
     const handleDelete = async(id) => {
       await fetch(`${API}${id}`, { method: "DELETE" })
+      setEditando(false);
       await getPost();
     }
 
