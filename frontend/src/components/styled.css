@@ -20,3 +20,10 @@
     background-color: rgb(168, 44, 44);
     color: seashell !important;
 }
+
+.x{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}

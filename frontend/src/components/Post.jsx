@@ -66,7 +66,7 @@ export const Post = () => {
             idpost={idpost}
           />
           {alertedit ? (
-            <Alert message="Presiona dos veces la tarjeta para editar"/>
+            <Alert message="Presiona dos veces la tarjeta para editar" mostraralertEdit={mostraralertEdit}/>
           ) : null}
         </div>
         <div className="col col-lg-8 col-md-7 col-xs-12 posteos">
