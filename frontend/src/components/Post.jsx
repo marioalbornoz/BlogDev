@@ -3,6 +3,7 @@ import React, { useState, Fragment, useEffect } from "react";
 import Formulario from "./Formulario";
 import "./styled.css";
 import Alert from "./Alert";
+import Card from "./Card";
 // import { getPost } from "../helpers/getPost";
 
 const API = process.env.REACT_APP_API;
@@ -66,30 +67,21 @@ export const Post = () => {
             idpost={idpost}
           />
           {alertedit ? (
-            <Alert message="Presiona dos veces la tarjeta para editar" mostraralertEdit={mostraralertEdit}/>
+            <Alert
+              message="Presiona dos veces la tarjeta para editar"
+              mostraralertEdit={mostraralertEdit}
+            />
           ) : null}
         </div>
         <div className="col col-lg-8 col-md-7 col-xs-12 posteos">
           {posts.map((post) => (
-            <div className="card w-45 m-2 animate__animated animate__bounceInRight" key={post.id}>
-              <div className="card-header">
-                <p className="h5">{post.title} </p>
-                <button
-                  type="submit"
-                  onClick={() => handleDelete(post.id)}
-                  className="btn radio"
-                >
-                  x
-                </button>
-              </div>
-              <div
-                className="card-body"
-                onClick={handleAlertEdit}
-                onDoubleClick={() => handleEdit(post.id)}
-              >
-                <p>{post.content}</p>
-              </div>
-            </div>
+            <Card
+              post={post}
+              key={post.id}
+              handleAlertEdit={handleAlertEdit}
+              handleDelete={handleDelete}
+              handleEdit={handleEdit}
+            />
           ))}
         </div>
       </div>
