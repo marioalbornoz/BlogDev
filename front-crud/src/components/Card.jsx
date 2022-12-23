@@ -6,10 +6,10 @@ const Card = ({post, handleAlertEdit, handleEdit, handleDelete}) => {
         className="card w-45 m-2 animate__animated animate__bounceInRight"
       >
         <div className="card-header">
-          <p className="h5">{post.title} </p>
+          <p className="h5">{post.name} </p>
           <button
             type="submit"
-            onClick={() => handleDelete(post.id)}
+            onClick={() => handleDelete(post._id)}
             className="btn radio"
           >
             x
@@ -18,9 +18,10 @@ const Card = ({post, handleAlertEdit, handleEdit, handleDelete}) => {
         <div
           className="card-body"
           onClick={handleAlertEdit}
-          onDoubleClick={() => handleEdit(post.id)}
+          onDoubleClick={() => handleEdit(post._id)}
         >
-          <p>{post.content}</p>
+          <p>IP: {post.ip}</p>
+          <p>Whse: {post.warehouse}</p>
         </div>
       </div>
     );

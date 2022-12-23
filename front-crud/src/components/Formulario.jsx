@@ -5,25 +5,31 @@ const API = process.env.REACT_APP_API;
 
 const Formulario = ({
   guardarPosts,
-  titulo,
-  texto,
-  guardarTitulo,
-  guardarTexto,
+  ip,
+  bodega,
+  name,
+  guardarIP,
+  guardarName,
+  guardarBodega,
+
   editando,
   setEditando,
   idpost,
 }) => {
-  const inputTitulo = (e) => {
-    guardarTitulo(e.target.value);
+  const inputIP = (e) => {
+    guardarIP(e.target.value);
   };
-  const inputTexto = (e) => {
-    guardarTexto(e.target.value);
+  const inputName = (e) => {
+    guardarName(e.target.value);
   };
+  const inputBodega = (e) => {
+    guardarBodega(e.target.value);
+  }
   const getPost = async () => {
     const res = await fetch(`${API}`);
-    const response = await res.json();
-    console.log(response);
-    guardarPosts(response);
+    const {data} = await res.json();
+    console.log(data);
+    guardarPosts(data);
   };
 
   const handleSubmit = async (e) => {
@@ -35,8 +41,9 @@ const Formulario = ({
           "Content-type": "application/json",
         },
         body: JSON.stringify({
-          title: titulo,
-          content: texto,
+          name: name,
+          warehouse:bodega,
+          ip: ip,
         }),
       });
       const data = await res.json();
@@ -44,14 +51,15 @@ const Formulario = ({
       console.log(data);
     }
     else {
-      const res = await fetch(`${API}${idpost}/`, {
+      const res = await fetch(`${API}/${idpost}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
         },
         body: JSON.stringify({
-          title: titulo,
-          content: texto,
+          name: name,
+          warehouse:bodega,
+          ip: ip,
         }),
       });
       const data = await res.json();
@@ -60,8 +68,8 @@ const Formulario = ({
     }
     
     getPost();
-    guardarTitulo("");
-    guardarTexto("");
+    guardarIP("");
+    guardarName("");
   };
 
   return (
@@ -69,9 +77,20 @@ const Formulario = ({
       <input
         type="text"
         name=""
-        onChange={inputTitulo}
-        value={titulo}
-        placeholder="ingrese titulo aqui.."
+        onChange={inputIP}
+        value={ip}
+        placeholder="IP de la impresora"
+        className="form-control"
+        autoFocus
+        required
+      />
+      <hr />
+      <input
+        type="text"
+        name=""
+        onChange={inputBodega}
+        value={bodega}
+        placeholder="ingrese bodega aqui.."
         className="form-control"
         autoFocus
         required
@@ -80,16 +99,17 @@ const Formulario = ({
       <textarea
         type="text"
         name=""
-        onChange={inputTexto}
-        value={texto}
-        placeholder="ingrese texto aqui.."
+        onChange={inputName}
+        value={name}
+        placeholder="ingrese nombre de la impresora"
+
         className="form-control mb-3"
       ></textarea>
-      {
-        editando? <button className="btn btn-danger btn-block">Editar/Listo</button>
-        : <button className="btn btn-primary btn-block">Guardar</button>
-      }
-      
+      {editando ? (
+        <button className="btn btn-danger btn-block">Editar/Listo</button>
+      ) : (
+        <button className="btn btn-primary btn-block">Guardar</button>
+      )}
     </form>
   );
 };
